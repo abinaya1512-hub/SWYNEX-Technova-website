@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechNova | Digital Solutions</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #172033;
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    background: #0b1220;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #67e8f9;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #67e8f9;
+}
+
+.nav-cta {
+    background: #315fe8;
+    padding: 10px 17px;
+    border-radius: 25px;
+}
+
+.menu-toggle {
+    display: none;
+    padding: 8px 12px;
+    background: transparent;
+    color: white;
+    border: 1px solid #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(91,140,255,.3), transparent 30%),
+        linear-gradient(135deg, #0b1220, #142d58);
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+    padding: 70px 0;
+}
+
+.badge {
+    display: inline-block;
+    color: #a5f3fc;
+    background: rgba(103,232,249,.1);
+    border: 1px solid rgba(103,232,249,.3);
+    padding: 7px 15px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.1;
+    margin: 25px 0;
+    letter-spacing: -2px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #93c5fd, #67e8f9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #cbd5e1;
+    font-size: 18px;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #93c5fd, #67e8f9);
+    color: #0b1220;
+}
+
+.secondary-btn {
+    border: 1px solid #94a3b8;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: #0b1220;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    padding: 25px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.2);
+    backdrop-filter: blur(12px);
+    transform: rotate(0deg);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #475569;
+}
+
+.dashboard-label {
+    color: #cbd5e1;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.dashboard h2 {
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.chart {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.chart span {
+    flex: 1;
+    border-radius: 7px 7px 0 0;
+    background: linear-gradient(#67e8f9, #4f75f2);
+}
+
+.chart span:nth-child(1) { height: 35%; }
+.chart span:nth-child(2) { height: 50%; }
+.chart span:nth-child(3) { height: 40%; }
+.chart span:nth-child(4) { height: 70%; }
+.chart span:nth-child(5) { height: 55%; }
+.chart span:nth-child(6) { height: 85%; }
+.chart span:nth-child(7) { height: 65%; }
+.chart span:nth-child(8) { height: 100%; }
+
+.dashboard-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.mini-card {
+    background: rgba(255,255,255,.08);
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.mini-card p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+.mini-card h3 {
+    color: white;
+    font-size: 16px;
+}
+
+/* COMMON SECTIONS */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.kicker {
+    color: #315fe8;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    color: #0b1220;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #64748b;
+}
+
+/* SERVICES */
+
+.services {
+    background: #f5f8ff;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e5eaf3;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(20,37,70,.05);
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(37,99,235,.12);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: #edf3ff;
+    border-radius: 15px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #1d4ed8;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.service-card p {
+    color: #64748b;
+}
+
+.service-card a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #315fe8;
+    font-weight: bold;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-visual {
+    padding: 35px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(135deg, #14264a, #315fe8);
+}
+
+.about-visual .symbol {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-visual h3 {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.about-visual p {
+    color: #dbeafe;
+    margin-top: 15px;
+}
+
+.about-copy h2 {
+    color: #0b1220;
+    font-size: 38px;
+    line-height: 1.2;
+    margin-top: 12px;
+}
+
+.about-copy > p {
+    color: #64748b;
+    margin-top: 20px;
+}
+
+.check-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.check-list li {
+    margin: 13px 0;
+    color: #34425b;
+    font-weight: bold;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: #2563eb;
+    margin-right: 10px;
+}
+/* PROCESS */
+
+.process {
+    background: #f5f8ff;
+}
+
+.process-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.process-card {
+    padding: 25px;
+    background: white;
+    border-top: 4px solid #315fe8;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(20,37,70,.05);
+}
+
+.process-number {
+    color: #315fe8;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.process-card h3 {
+    margin: 12px 0;
+    color: #0b1220;
+}
+
+.process-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.cta {
+    padding: 0 0 85px;
+}
+
+.cta-box {
+    padding: 50px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #14264a, #315fe8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta-box h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+}
+
+.cta-box p {
+    color: #dbeafe;
+    margin-top: 15px;
+}
+
+.cta-btn {
+    flex-shrink: 0;
+    background: white;
+    color: #14264a;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b1220;
+    color: white;
+    padding-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 35px;
+}
+
+.footer-about p {
+    max-width: 350px;
+    color: #94a3b8;
+    margin-top: 15px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin: 10px 0;
+}
+
+.footer-column a {
+    color: #94a3b8;
+}
+
+.footer-column a:hover {
+    color: #67e8f9;
+}
+
+.footer-bottom {
+    padding: 20px 0;
+    border-top: 1px solid #263248;
+    color: #94a3b8;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard {
+        max-width: 500px;
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 12px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 12px 8px;
+    }
+
+    .nav-cta {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-grid {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .service-container,
+    .about-grid,
+    .process-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-copy h2 {
+        font-size: 32px;
+    }
+
+    .cta {
+        padding-bottom: 65px;
+    }
+
+    .cta-box {
+        padding: 30px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .dashboard {
+        padding: 17px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar container">
+    <a href="#home" class="logo">Tech<span>Nova</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-expanded="false" aria-controls="navLinks">
+        ☰ Menu
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk ↗</a></li>
+    </ul>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+    <div>
+        <span class="badge">DIGITAL SOLUTIONS FOR WHAT'S NEXT</span>
+
+        <h1>
+            Ideas into impact.<br>
+            <span class="gradient-text">Built for tomorrow.</span>
+        </h1>
+
+        <p>
+            We help businesses create a stronger digital presence
+            through thoughtful design, modern websites and
+            innovative technology solutions.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#services" class="btn primary-btn">
+                Explore Services ↗
+            </a>
+
+            <a href="#about" class="btn secondary-btn">
+                Discover TechNova
+            </a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <strong>Digital Overview</strong>
+            <span>● ● ●</span>
+        </div>
+
+        <p class="dashboard-label">Our approach</p>
+        <h2>Smart by Design ✦</h2>
+
+        <div class="chart">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="dashboard-bottom">
+            <div class="mini-card">
+                <p>Design approach</p>
+                <h3>People First</h3>
+            </div>
+
+            <div class="mini-card">
+                <p>Development</p>
+                <h3>Responsive</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="kicker">What We Do</span>
+        <h2>Digital Solutions That Move You Forward</h2>
+        <p>
+            We create useful, modern and memorable digital
+            experiences for growing businesses.
+        </p>
+    </div>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>
+                We build modern, responsive and user-friendly
+                websites that work across different devices.
+            </p>
+            <a href="#contact">Learn More →</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>
+                We design attractive and intuitive interfaces
+                that make digital experiences easier to use.
+            </p>
+            <a href="#contact">Learn More →</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>Digital Solutions</h3>
+            <p>
+                We explore practical technology solutions
+                to solve problems and improve workflows.
+            </p>
+            <a href="#contact">Learn More →</a>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about-grid">
+
+    <div class="about-visual">
+        <div class="symbol">✦</div>
+        <h3>Technology Should Feel Simple.</h3>
+        <p>
+            We turn ideas into clear and meaningful
+            digital experiences.
+        </p>
+    </div>
+
+    <div class="about-copy">
+        <span class="kicker">About TechNova</span>
+
+        <h2>Thoughtful Work.<br>Meaningful Outcomes.</h2>
+
+        <p>
+            TechNova is a digital solutions concept focused
+            on creating modern websites and user-friendly
+            digital experiences. We combine creative design
+            with front-end development to build interfaces
+            that are simple, attractive and practical.
+        </p>
+
+        <ul class="check-list">
+            <li>Responsive across different screen sizes</li>
+            <li>Clean and modern user interface</li>
+            <li>Easy navigation and readable content</li>
+            <li>Consistent design and useful interactions</li>
+        </ul>
+    </div>
+
+</div>
+</section>
+
+<section class="process" id="process">
+<div class="container">
+
+    <div class="section-heading">
+        <span class="kicker">Our Process</span>
+        <h2>From Idea to Digital Experience</h2>
+        <p>
+            A simple workflow helps us build purposeful
+            and user-friendly websites.
+        </p>
+    </div>
+
+    <div class="process-container">
+
+        <div class="process-card">
+            <span class="process-number">STEP 01</span>
+            <h3>Discover</h3>
+            <p>
+                Understand the project goals and the needs
+                of the intended audience.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-number">STEP 02</span>
+            <h3>Design</h3>
+            <p>
+                Plan the layout and create a consistent,
+                attractive user interface.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-number">STEP 03</span>
+            <h3>Develop</h3>
+            <p>
+                Build responsive pages with HTML, CSS
+                and useful JavaScript interactions.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-number">STEP 04</span>
+            <h3>Refine</h3>
+            <p>
+                Test different screen sizes and improve
+                the user experience.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="container">
+    <div class="cta-box">
+
+        <div>
+            <span class="badge">YOUR NEXT IDEA STARTS HERE</span>
+
+            <h2>Ready to Build Something Amazing?</h2>
+
+            <p>
+                Let's turn your ideas into a modern
+                digital experience.
+            </p>
+        </div>
+
+        <a class="btn cta-btn"
+           href="mailto:hello@technova.example?subject=Project%20Enquiry">
+            Get in Touch ↗
+        </a>
+
+    </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <a href="#home" class="logo">Tech<span>Nova</span></a>
+
+            <p>
+                Modern digital experiences shaped by thoughtful
+                design, useful technology and a people-first mindset.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#process">Our Process</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="#contact">Project Enquiry</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="mailto:hello@technova.example">Email Us</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© <span id="year">2026</span> TechNova. All Rights Reserved.</p>
+        <a href="#home" style="color:#67e8f9">Back to Top ↑</a>
+    </div>
+
+</div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.innerHTML = isOpen ? "✕ Close" : "☰ Menu";
+});
+
+navLinks.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰ Menu";
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
